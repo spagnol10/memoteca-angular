@@ -7,7 +7,7 @@ import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
 import { RodapeComponent } from './components/rodape/rodape.component';
 import { CriarPensamentoComponent } from './components/pensamentos/criar-pensamento/criar-pensamento.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ListarPensamentosComponent } from './components/pensamentos/listar-pensamentos/listar-pensamentos.component';
+import { ListarPensamentoComponent } from './components/pensamentos/listar-pensamentos/listar-pensamentos.component';
 import { PensamentoComponent } from './components/pensamentos/pensamento/pensamento.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ExcluirPensamentoComponent } from './components/pensamentos/excluir-pensamento/excluir-pensamento.component';
@@ -19,7 +19,7 @@ import { EditarPensamentoComponent } from './components/pensamentos/editar-pensa
     CabecalhoComponent,
     RodapeComponent,
     CriarPensamentoComponent,
-    ListarPensamentosComponent,
+    ListarPensamentoComponent,
     PensamentoComponent,
     ExcluirPensamentoComponent,
     EditarPensamentoComponent
