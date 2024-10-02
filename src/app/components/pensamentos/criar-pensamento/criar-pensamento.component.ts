@@ -13,7 +13,7 @@ export class CriarPensamentoComponent implements OnInit {
     conteudo: '',
     autoria: '',
     modelo: 'modelo1'
-  };
+    };
 
   constructor() {}
 
