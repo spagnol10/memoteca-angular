@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import type { PensamentoService } from '../pensamento.service';
-import type { ActivatedRoute, Router } from '@angular/router';
-import type { Pensamento } from '../pensamento';
+import { PensamentoService } from '../pensamento.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Pensamento } from '../pensamento';
 
 @Component({
   selector: 'app-excluir-pensamento',
@@ -42,6 +42,6 @@ export class ExcluirPensamentoComponent implements OnInit {
     this.router.navigate(['/listarPensamento'])
   }
 
-  
+
 
 }
