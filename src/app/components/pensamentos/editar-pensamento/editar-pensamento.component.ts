@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import type { Pensamento } from '../pensamento';
 import type { PensamentoService } from '../pensamento.service';
 import type { ActivatedRoute, Router } from '@angular/router';
-import type { Pensamento } from '../pensamento';
 
 @Component({
-  selector: 'app-excluir-pensamento',
-  templateUrl: './excluir-pensamento.component.html',
-  styleUrls: ['./excluir-pensamento.component.css']
+  selector: 'app-editar-pensamento',
+  templateUrl: './editar-pensamento.component.html',
+  styleUrls: ['./editar-pensamento.component.css']
 })
-export class ExcluirPensamentoComponent implements OnInit {
+export class EditarPensamentoComponent implements OnInit {
 
   pensamento: Pensamento = {
     id: 0,
@@ -30,18 +30,13 @@ export class ExcluirPensamentoComponent implements OnInit {
     })
   }
 
-  excluirPensamento() {
-    if (this.pensamento.id) {
-      this.service.excluir(this.pensamento.id).subscribe(() => {
-        this.router.navigate(['/listarPensamento'])
-      })
-    }
+  editarPensamento() {
+    this.service.editar(this.pensamento).subscribe(() => {
+      this.router.navigate(['/listarPensamento'])
+    })
   }
 
   cancelar() {
     this.router.navigate(['/listarPensamento'])
   }
-
-  
-
 }
