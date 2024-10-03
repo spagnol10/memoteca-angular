@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { PensamentoService } from '../pensamento.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PensamentoService } from './../pensamento.service';
+import { Component, OnInit } from '@angular/core';
 import { Pensamento } from '../pensamento';
 
 @Component({
@@ -31,7 +31,7 @@ export class ExcluirPensamentoComponent implements OnInit {
   }
 
   excluirPensamento() {
-    if (this.pensamento.id) {
+    if(this.pensamento.id) {
       this.service.excluir(this.pensamento.id).subscribe(() => {
         this.router.navigate(['/listarPensamento'])
       })
@@ -41,7 +41,5 @@ export class ExcluirPensamentoComponent implements OnInit {
   cancelar() {
     this.router.navigate(['/listarPensamento'])
   }
-
-
 
 }

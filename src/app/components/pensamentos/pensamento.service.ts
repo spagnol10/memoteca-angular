@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Pensamento } from './pensamento';
 import { Observable } from 'rxjs';
+import { Pensamento } from './pensamento';
 
 @Injectable({
   providedIn: 'root'
@@ -35,4 +35,8 @@ export class PensamentoService {
     return this.http.get<Pensamento>(url)
   }
 
+  buscarPorIdString(id: string): Observable<Pensamento> {
+    const url = `${this.API}/${id}`
+    return this.http.get<Pensamento>(url)
+  }
 }
