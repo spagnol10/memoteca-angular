@@ -10,10 +10,17 @@ export class PensamentoService {
 
   private readonly API = 'http://localhost:3000/pensamentos'
 
+  
+
   constructor(private http: HttpClient) { }
 
-  listar(): Observable<Pensamento[]> {
-    return this.http.get<Pensamento[]>(this.API)
+  listar(page:number): Observable<Pensamento[]> {
+    const limit = 6;
+
+
+    // GET /posts?_page=1&_per_page=25
+    return this.http
+    .get<Pensamento[]>(`${this.API}?_page=${page}&_limit=${limit}`)
   }
 
   criar(pensamento: Pensamento): Observable<Pensamento> {
