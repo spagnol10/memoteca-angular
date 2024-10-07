@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Pensamento } from '../pensamento';
 import { PensamentoService } from './../pensamento.service';
 
 @Component({
@@ -22,21 +23,24 @@ export class EditarPensamentoComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')
     this.service.buscarPorId(parseInt(id!)).subscribe((pensamento) => {
-      this.formulario = this.formBuilder.group({
-        conteudo: ['', Validators.compose([
-          Validators.required,
-          Validators.pattern(/(.|\s)*\S(.|\s)*/),
-        ])],
-        autoria: ['', Validators.compose([
-          Validators.required,
-          Validators.minLength(3),
-        ])],
-        modelo: ['modelo1']
-      })
+      this.validateForm(pensamento)
     })
   }
 
-
+  validateForm(pensamento:Pensamento) {
+    this.formulario = this.formBuilder.group({
+      id: [pensamento.id],
+      conteudo: ['', Validators.compose([
+        Validators.required,
+        Validators.pattern(/(.|\s)*\S(.|\s)*/),
+      ])],
+      autoria: ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(3),
+      ])],
+      modelo: ['modelo1']
+    })
+  }
 
   editarPensamento() {
     if (this.formulario.valid) {
@@ -44,14 +48,13 @@ export class EditarPensamentoComponent implements OnInit {
         this.router.navigate(['/listarPensamento'])
       })
     }
-
   }
 
   cancelar() {
     this.router.navigate(['/listarPensamento'])
   }
 
-  habilitarBotao() {
+  habilitarBotao(): string {
     if (this.formulario.valid) {
       return 'botao'
     }
