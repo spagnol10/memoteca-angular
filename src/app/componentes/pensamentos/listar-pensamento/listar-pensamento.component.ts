@@ -5,48 +5,56 @@ import { Pensamento } from '../pensamento';
 @Component({
   selector: 'app-listar-pensamento',
   templateUrl: './listar-pensamento.component.html',
-  styleUrls: ['./listar-pensamento.component.css']
+  styleUrls: ['./listar-pensamento.component.css'],
 })
 export class ListarPensamentoComponent implements OnInit {
-
   listaPensamentos: Pensamento[] = [];
-  page: number = 1;
-  haMaisPensamentos: boolean = true;
+  listaFavoritos: Pensamento[] = [];
   filtro: string = '';
+  haMaisPensamentos: boolean = true;
+  favorito: boolean = false;
+  page: number = 1;
 
-  constructor(private service: PensamentoService) { }
+
+  constructor(private service: PensamentoService) {}
 
   ngOnInit(): void {
-    this.service.listar(this.page, this.filtro).subscribe((listaPensamentos) => {
-      this.listaPensamentos = listaPensamentos
-    })
+    this.service
+      .listar(this.page, this.filtro, this.favorito)
+      .subscribe((listaPensamentos) => {
+        this.listaPensamentos = listaPensamentos;
+      });
   }
 
   carregarMaisPensamentos() {
-    this.service.listar(++this.page, this.filtro).subscribe(listaPensamentos => {
-      this.listaPensamentos.push(...listaPensamentos);
-      if (!listaPensamentos.length) {
-        this.haMaisPensamentos = false
-      }
-    })
+    this.service
+      .listar(++this.page, this.filtro, this.favorito)
+      .subscribe((listaPensamentos) => {
+        this.listaPensamentos.push(...listaPensamentos);
+        if (!listaPensamentos.length) {
+          this.haMaisPensamentos = false;
+        }
+      });
   }
 
   searchMind() {
-    this.haMaisPensamentos = true
-    this.page = 1
-    this.service.listar(this.page, this.filtro).subscribe(listaPensamentos => {
-      this.listaPensamentos = listaPensamentos
-    })
+    this.haMaisPensamentos = true;
+    this.page = 1;
+    this.service
+      .listar(this.page, this.filtro, this.favorito)
+      .subscribe((listaPensamentos) => {
+        this.listaPensamentos = listaPensamentos;
+      });
   }
 
   listarFavoritos() {
-    this.haMaisPensamentos = true
-    this.page = 1
-    this.service.listarPensamentosFavoritos(this.page, this.filtro).subscribe(
-      listaPensamentosFavoritos => {
-        this.listaPensamentos = listaPensamentosFavoritos
-      }
-    )
+    this.haMaisPensamentos = true;
+    this.page = 1;
+    this.service
+      .listar(this.page, this.filtro, this.favorito)
+      .subscribe((listaPensamentosFavoritos) => {
+        this.listaPensamentos = listaPensamentosFavoritos;
+        this.listaFavoritos = listaPensamentosFavoritos;
+      });
   }
 }
-

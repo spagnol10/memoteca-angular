@@ -2,52 +2,73 @@
   "pensamentos": [
     {
       "id": 1,
-      "conteudo": "We are the champions my friends!!!",
-      "autoria": "Queen",
+      "conteudo": "A vida é uma aventura, aproveite cada momento!",
+      "autoria": "Desconhecida",
+      "modelo": "modelo1",
+      "favorito": true
+    },
+    {
+      "id": 2,
+      "conteudo": "Acredite em si mesmo e todo o resto virá naturalmente.",
+      "autoria": "Elissa P.",
       "modelo": "modelo1",
       "favorito": false
     },
     {
-      "id": 2,
-      "conteudo": "We are the champions my friends!!!",
-      "autoria": "Queen",
-      "modelo": "modelo1",
-      "favorito": true
-    },
-    {
       "id": 3,
-      "conteudo": "We are the champions my friends!!!",
-      "autoria": "Queen",
+      "conteudo": "Não importa quão devagar você vá, desde que não pare.",
+      "autoria": "Confúcio",
       "modelo": "modelo1",
-      "favorito": true
+      "favorito": false
     },
     {
       "id": 4,
-      "conteudo": "We are the champions my friends!!!",
-      "autoria": "Queen",
+      "conteudo": "A felicidade não é um destino, é uma maneira de viajar.",
+      "autoria": "Margaret Lee Runbeck",
       "modelo": "modelo1",
-      "favorito": true
+      "favorito": false
     },
     {
       "id": 5,
-      "conteudo": "We are the champions my friends!!!",
-      "autoria": "Queen",
+      "conteudo": "Os sonhos são as sementes da realidade.",
+      "autoria": "James Allen",
       "modelo": "modelo1",
-      "favorito": true
+      "favorito": false
     },
     {
       "id": 6,
-      "conteudo": "We are the champions my friends!!!",
-      "autoria": "Queen",
+      "conteudo": "A vida é 10% o que acontece e 90% como reagimos a isso.",
+      "autoria": "Charles R. Swindoll",
       "modelo": "modelo1",
-      "favorito": true
+      "favorito": false
     },
     {
-      "id": 1,
-      "conteudo": "We are the champions my friends!!!",
-      "autoria": "Queen",
+      "id": 7,
+      "conteudo": "Cada dia é uma nova oportunidade para mudar sua vida.",
+      "autoria": "Desconhecida",
       "modelo": "modelo1",
-      "favorito": true
+      "favorito": false
+    },
+    {
+      "id": 8,
+      "conteudo": "A gratidão transforma o que temos em suficiente.",
+      "autoria": "Melody Beattie",
+      "modelo": "modelo1",
+      "favorito": false
+    },
+    {
+      "id": 9,
+      "conteudo": "O sucesso é a soma de pequenos esforços repetidos dia após dia.",
+      "autoria": "Robert Collier",
+      "modelo": "modelo1",
+      "favorito": false
+    },
+    {
+      "id": 10,
+      "conteudo": "O único modo de fazer um excelente trabalho é amar o que você faz.",
+      "autoria": "Steve Jobs",
+      "modelo": "modelo1",
+      "favorito": false
     }
   ]
 }
