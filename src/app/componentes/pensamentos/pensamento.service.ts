@@ -9,7 +9,7 @@ import { Observable, filter } from 'rxjs';
 export class PensamentoService {
   private readonly API = 'http://localhost:3000/pensamentos';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   listar(
     page: number,
@@ -20,11 +20,11 @@ export class PensamentoService {
 
     let params = new HttpParams().set('_page', page).set('_limit', limit);
 
-    if (filter != null) {
+    if (filter.trim().length > 2) {
       params = params.set('q', filter);
     }
 
-    if (favoritos != null) {
+    if (favoritos) {
       params = params.set('favorito', true);
     }
 
@@ -36,8 +36,6 @@ export class PensamentoService {
   }
 
   editar(pensamento: Pensamento): Observable<Pensamento> {
-    console.log(pensamento);
-
     const url = `${this.API}/${pensamento.id}`;
     return this.http.put<Pensamento>(url, pensamento);
   }

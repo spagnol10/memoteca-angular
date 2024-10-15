@@ -53,6 +53,7 @@ export class ListarPensamentoComponent implements OnInit {
 
   listarFavoritos() {
     this.titulo = 'Meus Favoritos'
+    this.favoritos = true;
     this.haMaisPensamentos = true;
     this.page = 1;
     this.service
@@ -64,12 +65,10 @@ export class ListarPensamentoComponent implements OnInit {
   }
 
   recarregarComponente() {
-    // location.reload();
-
     this.favoritos = false;
     this.page = 1;
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    this.router.onSameUrlNavigation = 'reload';
-    this.router.navigate([this.router.url]);
+    this.router.onSameUrlNavigation = 'reload'
+    this.router.navigate([this.router.url])
   }
 }
